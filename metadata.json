@@ -1,0 +1,6 @@
+{
+  "name": "Synapse Club - GLA University",
+  "description": "Futuristic, award-winning AI Club platform for Synapse Club at GLA University featuring interactive event registrations, workshops, hackathons, announcements, and resources.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
