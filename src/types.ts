@@ -1,3 +1,14 @@
+export type TabId =
+  | "home"
+  | "about"
+  | "tools"
+  | "events"
+  | "team"
+  | "gallery"
+  | "announcements"
+  | "resources"
+  | "contact";
+
 export interface AITool {
   id: string;
   name: string;

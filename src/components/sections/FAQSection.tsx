@@ -21,7 +21,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-28 px-6 md:px-12 max-w-5xl mx-auto z-10 relative border-t border-white/10">
+    <section id="faq" className="py-8 md:py-12 px-6 md:px-12 max-w-5xl mx-auto z-10 relative">
       <div className="space-y-4 mb-12 text-center">
         <span className="px-3 py-1 bg-white/5 border border-white/15 rounded-full text-xs font-mono text-gray-300 uppercase tracking-widest">
           FREQUENTLY ASKED QUESTIONS

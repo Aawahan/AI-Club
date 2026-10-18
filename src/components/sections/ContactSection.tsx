@@ -23,7 +23,7 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
   };
 
   return (
-    <section id="contact" className="py-28 px-6 md:px-12 max-w-7xl mx-auto z-10 relative border-t border-white/10">
+    <section id="contact" className="py-8 md:py-12 px-6 md:px-12 max-w-7xl mx-auto z-10 relative border-t border-white/10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Column Info & AURA Copilot Banner */}
         <div className="lg:col-span-5 space-y-8">

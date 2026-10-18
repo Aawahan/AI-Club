@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp, Github, Twitter, Linkedin, Mail, Check, Cpu } from "lucide-react";
 import { useSound } from "../../context/SoundContext";
+import { TabId } from "../../types";
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onSelectTab?: (tab: TabId) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   const [time, setTime] = useState("");
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const { playClick, playHover, playSuccess } = useSound();
+
+  const handleLinkClick = (tabId: TabId) => {
+    playClick();
+    if (onSelectTab) {
+      onSelectTab(tabId);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const updateTime = () => {
@@ -79,15 +92,21 @@ export const Footer: React.FC = () => {
               PLATFORM
             </span>
             <ul className="space-y-2">
-              {["About", "3D Tools", "Events", "Workshops", "Hackathons"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(" ", "")}`}
+              {[
+                { name: "About", tab: "about" as TabId },
+                { name: "3D Tools", tab: "tools" as TabId },
+                { name: "Events", tab: "events" as TabId },
+                { name: "Workshops", tab: "events" as TabId },
+                { name: "Hackathons", tab: "events" as TabId },
+              ].map((item) => (
+                <li key={item.name}>
+                  <button
+                    onClick={() => handleLinkClick(item.tab)}
                     onMouseEnter={playHover}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-left"
                   >
-                    {item}
-                  </a>
+                    {item.name}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -98,15 +117,21 @@ export const Footer: React.FC = () => {
               RESOURCES
             </span>
             <ul className="space-y-2">
-              {["Team", "Gallery", "Updates", "Resources", "FAQ"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(" ", "")}`}
+              {[
+                { name: "Team", tab: "team" as TabId },
+                { name: "Gallery", tab: "gallery" as TabId },
+                { name: "Updates", tab: "announcements" as TabId },
+                { name: "Resources", tab: "resources" as TabId },
+                { name: "FAQ", tab: "contact" as TabId },
+              ].map((item) => (
+                <li key={item.name}>
+                  <button
+                    onClick={() => handleLinkClick(item.tab)}
                     onMouseEnter={playHover}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-left"
                   >
-                    {item}
-                  </a>
+                    {item.name}
+                  </button>
                 </li>
               ))}
             </ul>

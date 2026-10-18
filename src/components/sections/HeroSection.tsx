@@ -12,7 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onJoin }) =
   const { playHover, playClick } = useSound();
 
   return (
-    <section id="hero" className="relative min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col justify-center items-center text-center overflow-hidden z-10">
+    <section id="hero" className="relative min-h-[75vh] pt-8 md:pt-14 pb-16 px-6 md:px-12 flex flex-col justify-center items-center text-center overflow-hidden z-10">
       {/* Background ambient lighting halo */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-white/10 to-transparent blur-[160px] pointer-events-none" />
 
@@ -84,20 +84,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExplore, onJoin }) =
       </motion.div>
 
       {/* Scroll Down Indicator */}
-      <motion.a
-        href="#about"
-        onClick={(e) => {
-          e.preventDefault();
+      <motion.button
+        onClick={() => {
           playClick();
-          document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({ top: 400, behavior: "smooth" });
         }}
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        className="mt-16 flex flex-col items-center gap-2 text-xs font-mono text-gray-500 hover:text-white transition-colors cursor-pointer"
+        className="mt-14 flex flex-col items-center gap-2 text-xs font-mono text-gray-500 hover:text-white transition-colors cursor-pointer"
       >
-        <span>SCROLL TO DISCOVER</span>
+        <span>DISCOVER ECOSYSTEM</span>
         <ChevronDown className="w-4 h-4" />
-      </motion.a>
+      </motion.button>
     </section>
   );
 };

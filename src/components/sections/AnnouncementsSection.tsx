@@ -15,7 +15,7 @@ export const AnnouncementsSection: React.FC = () => {
   );
 
   return (
-    <section id="announcements" className="py-28 px-6 md:px-12 max-w-7xl mx-auto z-10 relative border-t border-white/10">
+    <section id="announcements" className="py-8 md:py-12 px-6 md:px-12 max-w-7xl mx-auto z-10 relative">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
           <span className="px-3 py-1 bg-white/5 border border-white/15 rounded-full text-xs font-mono text-gray-300 uppercase tracking-widest">

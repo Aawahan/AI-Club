@@ -59,7 +59,7 @@ export const EventsSection: React.FC = () => {
   ];
 
   return (
-    <section id="events" className="py-24 px-6 md:px-12 max-w-7xl mx-auto z-10 relative">
+    <section id="events" className="py-8 md:py-12 px-6 md:px-12 max-w-7xl mx-auto z-10 relative">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div className="space-y-3">
